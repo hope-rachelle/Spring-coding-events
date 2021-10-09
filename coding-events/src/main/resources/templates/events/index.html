@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Coding Events</h1>
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1>All Events</h1>
 
-    <ul>
+    <table class="table table-striped">
+        <tr>
+            <th>Events</th>
+            <th>Description</th>
+            <th>Address</th>
+            <th>Logo</th>
+        </tr>
         <th:block th:each="event : ${events}">
-        <li th:text="${event}"></li>
+            <tr>
+                <td th:text="${event.key}"></td>
+                <td th:text="${event.value}"></td>
+                <th:block th:if='${event.key.equals("CES")}'>
+                    <td th:replace="fragments :: cesAddress"></td>
+                </th:block>
+                <th:block th:if='${event.key.equals("Hour of Code")}'>
+                    <td th:replace="fragments :: hourOfCodeAddress"></td>
+                </th:block>
+                <th:block th:if='${event.key.equals("Strange Loop")}'>
+                    <td th:replace="fragments :: strangeLoopAddress"></td>
+                </th:block>
+            </tr>
         </th:block>
-    </ul>
+    </table>
 
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Coding Events</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <link th:href="@{/styles.css}"rel="stylesheet">
+</head>
+<body class="container">
+<th:block th:fragment="cesAddress">
+<td >123 Main St. </td>
+    <td><img th:src="@{/images/ces_logo.jpg}"></td>
+</th:block>
+
+<th:block th:fragment="strangeLoopAddress">
+    <td >425 Fifth St. </td>
+    <td><img th:src="@{/images/strangeLoop_logo.jpg}"></td>
+</th:block>
+
+<th:block th:fragment="hourOfCodeAddress">
+    <td >1 Major St. </td>
+    <td><img th:src="@{/images/hourOfCode_logo.jpg}"></td>
+</th:block>
+
+</body>
+</html>
